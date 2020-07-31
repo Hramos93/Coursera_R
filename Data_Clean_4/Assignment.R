@@ -28,3 +28,19 @@ subject_test = read.table(file.path(pathdata, "test", "subject_test.txt"), heade
 features = read.table(file.path(pathdata, "features.txt"), header = FALSE)
 #Read activity label data
 activityLabels = read.table(file.path(pathdata,"activity_labels.txt"),  header = FALSE)
+
+#######################ADD TAGGING TO DATA##############
+
+#Create Sanity and Column Values to te Train Data
+colnames(xtrain) = features[,2]
+colnames(ytrain) = "activityId"
+colnames(subject_train) = "subjectId"
+
+#Test Data 
+colnames(xtest) = features[,2]
+colnames(ytest) = "activityId"
+colnames(subject_test) = "subjectId"
+
+#Labels
+
+colnames(activityLabels) <- c('activityId', 'activityType')
