@@ -7,5 +7,7 @@
 
 
 STEP 2
-<h3> ADD TAGGING<h3>
+<h3> ADD TAGGING and MERGE<h3>
 <p> become add tag to tables to identify better<p>
+<p> MERGE ALL TABLE <p>
+

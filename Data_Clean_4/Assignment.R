@@ -44,3 +44,15 @@ colnames(subject_test) = "subjectId"
 #Labels
 
 colnames(activityLabels) <- c('activityId', 'activityType')
+
+
+#MERGE
+
+Mrg_train = cbind(ytrain, subject_train, xtrain) %>%
+  View
+
+Mrg_test = cbind(ytest, subject_test, xtest) %>%
+  View
+
+mrgALL = rbind(Mrg_train, Mrg_test)
+
