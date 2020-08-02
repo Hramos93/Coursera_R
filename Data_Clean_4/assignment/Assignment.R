@@ -48,12 +48,29 @@ colnames(activityLabels) <- c('activityId', 'activityType')
 
 #MERGE
 
-Mrg_train = cbind(ytrain, subject_train, xtrain) %>%
-  View
+Mrg_train = cbind(ytrain, subject_train, xtrain) 
+  
 
-Mrg_test = cbind(ytest, subject_test, xtest) %>%
-  View
-
+Mrg_test = cbind(ytest, subject_test, xtest)
+ 
 mrgALL = rbind(Mrg_train, Mrg_test)
 
 ###################################################
+
+#EXTRACTING MEASUREMENTS
+
+#saving names column in a variable call colNames
+colNames = colnames(mrgALL)
+
+mean_and_std = (grepl("activityId", colNames) | grepl("subjectId", colNames) | grepl("mean..", colNames) | grepl("std..", colNames))
+
+setForMeanAndStd <- mrgALL[, mean_and_std == TRUE]
+
+setWithActivityNames = merge(setForMeanAndStd, activityLabels, by='activityId', all.x=TRUE)
+
+
+secTidySet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
+secTidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityId),]
+
+write.table(secTidySet, "secTidySet.txt", row.name=FALSE)
+
