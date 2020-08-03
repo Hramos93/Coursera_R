@@ -19,4 +19,4 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 <p> Became prepared to libraries that we will need duranting process.
 this libraies are 'dplyr' and 'data.table', althought we became dowloand files to make assignment</p>
 
-![](assets/head.JPG)
+![](assets/img_1.JPG)
