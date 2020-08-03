@@ -60,7 +60,9 @@ The objective here is to make the test and training data as per the sequence sta
 ![](assets/img_3.JPG)
 
 <h3>The main objective was to merge the test and train data - Here are the R STEPS to ensure</h3>
+
 ![](assets/img_4.JPG)
+
 <h3>Extracting only the measurements on the mean and standard deviation for each measurement</h3>
 
 <p>Here the understanding is to measure the mean and standard deviation values only. This can be possible through different means. Here we are using the grepl function to get the data and create a data set associated with the requirements.</p>
