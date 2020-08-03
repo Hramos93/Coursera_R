@@ -35,10 +35,11 @@ Inertial Signal data is not required. Additionally, features and activity label 
 
 The objective here is to make the test and training data as per the sequence stated above. 4 basic level data sets will be defined and created:<p>
 
-<ol>test data set
-train data set
-features data set
-activity labels data set</ol>
+<ol>
+1- test data set
+2- train data set
+3- features data set
+4- activity labels data set</ol>
 
 ![](assets/img_2.JPG)
 
