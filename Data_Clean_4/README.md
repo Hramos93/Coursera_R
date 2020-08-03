@@ -28,17 +28,17 @@ Main
 Main : activity_labels Inertial Signals Inertial Signals Test: features subject_test subject_train Train: features.info X_test X_train
 
 README y_test y_train 'features_info.txt': Shows information about the variables used on the feature vector.
-* - 'features.txt': List of all features. 
-* - 'activity_labels.txt': Links the class labels with their activity name. * - 'train/X_train.txt': Training set. 
-* - 'train/y_train.txt': Training labels. 
-* - 'test/X_test.txt': Test set. 
-*- 'test/y_test.txt': Test labels
+ - 'features.txt': List of all features. 
+ - 'activity_labels.txt': Links the class labels with their activity name. * - 'train/X_train.txt': Training set. 
+ - 'train/y_train.txt': Training labels. 
+ - 'test/X_test.txt': Test set. 
+- 'test/y_test.txt': Test labels
 
 Analysis shows that you can categorize the data into 4 segments 
-* training set 
-* test set 
-* features 
-* activity labels
+ - training set 
+ - test set 
+ - features 
+ - activity labels
 
 Inertial Signal data is not required. Additionally, features and activity label are more for tagging and descriptive than data sets.
 
@@ -52,5 +52,24 @@ The objective here is to make the test and training data as per the sequence sta
 
 ![](assets/img_2.JPG)
 
+<cite> - the issue here is that the columns are not tagged and there is no easy way to interpret the data. This is a major issue with all data sets.And some coders do it later on however I believe that the best part is to create teh tagging now and create a proper data set now.</cite>
 
+<h3>Tagging the test and train data sets now </h3>
 
+![](assets/tables.JPG)
+![](assets/img_3.JPG)
+
+<h3>The main objective was to merge the test and train data - Here are the R STEPS to ensure</h3>
+![](assets/img_4.JPG)
+<h3>Extracting only the measurements on the mean and standard deviation for each measurement</h3>
+
+<p>Here the understanding is to measure the mean and standard deviation values only. This can be possible through different means. Here we are using the grepl function to get the data and create a data set associated with the requirements.</p>
+
+![](assets/img_5.JPG)
+
+<p>creates a independent tidy data set with the average of each variable for each activity and each subject</p>
+<p>New tidy set has to be created</p>
+<p>This is a tricky area and you need to first of all get the average of each variable for each activity. </p>
+<p>A good fuction here that can be used is the aggregate function</p>
+
+![](assets/img_6.JPG)
