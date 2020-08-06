@@ -1,7 +1,7 @@
 #lIBRARIES
 library(dplyr)
 library(data.table)
-
+library(plyr);
 #list files 
 list.files("/Users/Humberto/Documents/Project/R")
 
@@ -69,8 +69,12 @@ setForMeanAndStd <- mrgALL[, mean_and_std == TRUE]
 setWithActivityNames = merge(setForMeanAndStd, activityLabels, by='activityId', all.x=TRUE)
 
 
-secTidySet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
-secTidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityId),]
 
-write.table(secTidySet, "secTidySet.txt", row.name=FALSE)
+Datatidy <- setWithActivityNames %>% 
+  group_by(activityId,subjectId ) %>% 
+  summarise_each(funs(mean))
 
+write.table(Datatidy, "secTidySet.txt", row.name=FALSE)
+
+library(knitr)
+knit2html("/Users/Humberto/Documents/Project/R/Data Science/Coursera_Assignment/Coursera_R/Data_Clean_4/assignment/CODEBOOK.md")
